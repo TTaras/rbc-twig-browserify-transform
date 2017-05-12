@@ -18,11 +18,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/"
+    "url": "https://github.com/TTaras/rbc-twig-browserify-transform.git"
   },
   "dependencies": {
     "through2": "^0.6.3",
-    "rbc-twig-compiler": "0.0.1"
+    "rbc-twig-compiler": "^0.0.1"
   },
   "devDependencies": {},
   "engines": {
