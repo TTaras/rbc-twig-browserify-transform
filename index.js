@@ -24,7 +24,7 @@ function randomString() {
     var time = '' + Date.now();
 
     for (var i = length; i > 0; --i) {
-      result += chars[Math.floor(Math.random() * chars.length)];
+        result += chars[Math.floor(Math.random() * chars.length)];
     }
 
     result += time.substring(time.length - 5);
@@ -74,8 +74,8 @@ function hasTwigifiableExtension(filename, extensions) {
  */
 function compile(id, tplString) {
     var template = twig({
-        id : randomString(),
-        data : tplString
+        id: randomString(),
+        data: tplString
     });
 
     var tokens = JSON.stringify(template.tokens);
@@ -84,7 +84,7 @@ function compile(id, tplString) {
         return 'Twig.twig({ id: __filename, path: __dirname, data:' + tokens + ', precompiled: true, allowInlineIncludes: ' + config.allowInlineIncludes + ', autoescape: ' + config.autoescape + ' })';
     } else {
         if (config.replacePaths) {
-        	//console.log('origin: ' + id);
+            //console.log('origin: ' + id);
             for (var search in config.replacePaths) {
                 var pos = id.lastIndexOf(search);
                 if (pos > -1) {
@@ -97,7 +97,7 @@ function compile(id, tplString) {
         }
 
         // the id will be the filename to the require()ing module
-        return 'Twig.twig({ id: "'+ id +'", data:' + tokens + ', precompiled: true, allowInlineIncludes: ' + config.allowInlineIncludes + ', autoescape: ' + config.autoescape + ' })';
+        return 'Twig.twig({ id: "' + id + '", data:' + tokens + ', precompiled: true, allowInlineIncludes: ' + config.allowInlineIncludes + ', autoescape: ' + config.autoescape + ' })';
     }
 }
 
@@ -120,10 +120,10 @@ function process(source) {
  * @param   {object} params
  * @returns {stream | function} depending on if first argument is string.
  */
-module.exports = function(file, params) {
+module.exports = function (file, params) {
     /*
-    {Array} params.extensions - массив расширений
-    */
+     {Array} params.extensions - массив расширений
+     */
 
     /**
      * The function Browserify will use to transform the input.
@@ -170,7 +170,7 @@ module.exports = function(file, params) {
 
             try {
                 compiledTwig = compile(file, tplString);
-            } catch(e) {
+            } catch (e) {
                 console.log('Twig compile error: ' + e.message);
             }
 
