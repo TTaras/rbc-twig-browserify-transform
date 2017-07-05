@@ -1,6 +1,6 @@
 {
   "name": "rbc-twig-browserify-transform",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Browserify transform for pre-compiled Twigjs templates",
   "keywords": [
     "rbc",
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "through2": "^0.6.3",
-    "rbc-twig-compiler": "^0.0.4"
+    "rbc-twig-compiler": "~0.0.1"
   },
   "devDependencies": {},
   "engines": {
